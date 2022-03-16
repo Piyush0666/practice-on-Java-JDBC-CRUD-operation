@@ -1,0 +1,37 @@
+mysql> create database ebookshop;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> use ebookshop;
+Database changed
+mysql> create table books(id int not null auto_increment,title varchar(100),aurthor varchar(100),price float,qty int,primary key(id));
+Query OK, 0 rows affected (0.08 sec)
+
+mysql> insert into books(title,aurthor,price,qty) values('java for begin','ABC XYZ',10.50);
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+mysql> insert into books(title,aurthor,price,qty) values('java for begin','ABC XYZ',10.50,20);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> select * from books;
++----+----------------+---------+-------+------+
+| id | title          | aurthor | price | qty  |
++----+----------------+---------+-------+------+
+|  1 | java for begin | ABC XYZ |  10.5 |   20 |
++----+----------------+---------+-------+------+
+1 row in set (0.00 sec)
+
+mysql> insert into books(title,aurthor,price,qty) values('java Collections','PQR XYZ',20.50,30);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into books(title,aurthor,price,qty) values('java lambda','PQR LMN',30.50,10);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from books;
++----+------------------+---------+-------+------+
+| id | title            | aurthor | price | qty  |
++----+------------------+---------+-------+------+
+|  1 | java for begin   | ABC XYZ |  10.5 |   20 |
+|  2 | java Collections | PQR XYZ |  20.5 |   30 |
+|  3 | java lambda      | PQR LMN |  30.5 |   10 |
++----+------------------+---------+-------+------+
+3 rows in set (0.01 sec)
+
