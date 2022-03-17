@@ -12,12 +12,13 @@ public class EbookDAOIm implements EbookIF
     Connection con;
     PreparedStatement ps;
     String sql;
-    public void save(Ebook ebooks) {
+    public void save(Ebook ebooks ) {
         try {
+            System.out.println(ebooks);
             con = EbookDb.getConnection();
-            sql = "INSERT INTO ebooks(id,title,aurthor,price,qty) VALUES (?,?,?,?,?)";
+            sql = "INSERT INTO books(id,title,aurthor,price,qty) VALUES (?,?,?,?,?)";
             ps = con.prepareStatement(sql);
-            ps.setInt(1, ebooks.getId());
+           ps.setInt(1, ebooks.getId());
             ps.setString(2, ebooks.getTitle());
             ps.setString(3, ebooks.getAurthor());
             ps.setFloat(4, ebooks.getPrice());
@@ -33,7 +34,7 @@ public class EbookDAOIm implements EbookIF
     public void update(Ebook ebooks) {
         try {
             Connection con = EbookDb.getConnection();
-            String sql = "UPDATE book SET title=?,aurthor=?,price=?,qty=? WHERE id=?";
+            String sql = "UPDATE books SET title=?,aurthor=?,price=?,qty=? WHERE id=?";
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1, ebooks.getId());
             ps.setString(2, ebooks.getTitle());
@@ -61,7 +62,7 @@ public class EbookDAOIm implements EbookIF
         Ebook st = new Ebook();
         try {
             Connection con = EbookDb.getConnection();
-            String sql = "SELECT * FROM ebook WHERE id=?";
+            String sql = "SELECT * FROM books WHERE id=?";
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();

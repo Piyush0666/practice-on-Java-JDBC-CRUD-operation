@@ -7,7 +7,20 @@ public class Ebook {
     private String title;
     private String aurthor;
     private Float price;
+
+    public Ebook() {
+    }
+
+    public Ebook(int id, String title, String aurthor, Float price, int qty) {
+        this.id = id;
+        this.title = title;
+        this.aurthor = aurthor;
+        this.price = price;
+        this.qty = qty;
+    }
+
     private int qty;
+
 
     public int getId() {
         return id;

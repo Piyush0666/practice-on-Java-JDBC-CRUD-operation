@@ -12,6 +12,7 @@ mysql> insert into books(title,aurthor,price,qty) values('java for begin','ABC X
 Query OK, 1 row affected (0.02 sec)
 
 mysql> select * from books;
+
 +----+----------------+---------+-------+------+
 | id | title          | aurthor | price | qty  |
 +----+----------------+---------+-------+------+
@@ -34,4 +35,54 @@ mysql> select * from books;
 |  3 | java lambda      | PQR LMN |  30.5 |   10 |
 +----+------------------+---------+-------+------+
 3 rows in set (0.01 sec)
+mysql> select * from books;
++----+--------+---------+-------+------+
+| id | title  | aurthor | price | qty  |
++----+--------+---------+-------+------+
+|  5 | abc    | xyz     |    10 |   30 |
+|  6 | Piyush | xyz     |    10 |   30 |
+|  7 | nitesh | xyz     |  10.5 |   30 |
+|  8 | Piyush | xyz     |   700 |    5 |
++----+--------+---------+-------+------+
+4 rows in set (0.00 sec)
+
+mysql> select * from books;
++----+--------+---------+-------+------+
+| id | title  | aurthor | price | qty  |
++----+--------+---------+-------+------+
+|  5 | abc    | xyz     |    10 |   30 |
+|  6 | Piyush | xyz     |    10 |   30 |
+|  7 | nitesh | xyz     |  10.5 |   30 |
+|  8 | Piyush | xyz     |   700 |    5 |
+| 12 | nikhil | bhatia  |    30 |    5 |
++----+--------+---------+-------+------+
+5 rows in set (0.00 sec)
+
+mysql> desc ebookshop;
+ERROR 1146 (42S02): Table 'ebookshop.ebookshop' doesn't exist
+mysql> select * from books;
++----+--------+---------+-------+------+
+| id | title  | aurthor | price | qty  |
++----+--------+---------+-------+------+
+|  5 | abc    | xyz     |    10 |   30 |
+|  6 | Piyush | xyz     |    10 |   30 |
+|  7 | nitesh | xyz     |  10.5 |   30 |
+|  8 | Piyush | xyz     |   700 |    5 |
+| 12 | nikhil | bhatia  |    30 |    5 |
+| 13 | ooooo  | iiiiii  |  77.8 |   67 |
++----+--------+---------+-------+------+
+6 rows in set (0.00 sec)
+
+mysql> select * from books;
++----+----------+---------+--------+------+
+| id | title    | aurthor | price  | qty  |
++----+----------+---------+--------+------+
+|  5 | abc      | xyz     |     10 |   30 |
+|  6 | Piyush   | xyz     |     10 |   30 |
+|  7 | nitesh   | xyz     |   10.5 |   30 |
+|  8 | Piyush   | xyz     |    700 |    5 |
+| 12 | nikhil   | bhatia  |     30 |    5 |
+| 13 | ooooo    | iiiiii  |   77.8 |   67 |
+| 33 | Priyanka | kaynat  | 900.08 |    6 |
++----+----------+---------+--------+------+
 

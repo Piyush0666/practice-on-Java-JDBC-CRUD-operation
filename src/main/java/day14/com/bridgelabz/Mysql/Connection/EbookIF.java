@@ -8,5 +8,6 @@ public interface EbookIF {
     public void delete(Ebook ebooks);
     public Ebook get(int id );
     public List<Ebook> list();
+
 }
 
